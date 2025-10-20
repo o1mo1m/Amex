@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AMEX Airline Partnership Ecosystem</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .tab-active{border-bottom:2px solid #2563eb;color:#2563eb}
+    .card-hover{transition:all .25s ease}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 10px 15px rgba(0,0,0,.08)}
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen text-slate-800">
+  <header class="bg-blue-700 text-white">
+    <div class="max-w-6xl mx-auto p-6 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="bg-white text-blue-700 rounded-lg p-3"><i class="fas fa-credit-card text-2xl"></i></div>
+        <div>
+          <h1 class="text-2xl font-bold">AMEX Airline Partnership Ecosystem</h1>
+          <p class="text-blue-200 text-sm">Cash flows, relationships, and party responsibilities</p>
+        </div>
+      </div>
+      <div class="text-sm">
+        <span class="inline-flex items-center gap-2 bg-blue-600 bg-opacity-30 px-3 py-1 rounded">Live demo</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-white sticky top-0 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 overflow-x-auto">
+      <div id="tabs" class="flex gap-2">
+        <button class="tab tab-active px-3 py-2 rounded-md">Partners</button>
+        <button class="tab px-3 py-2 rounded-md text-slate-600">Lounges</button>
+        <button class="tab px-3 py-2 rounded-md text-slate-600">Merchants</button>
+        <button class="tab px-3 py-2 rounded-md text-slate-600">Cash Flow</button>
+        <button class="tab px-3 py-2 rounded-md text-slate-600">Analytics</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto p-6">
+    <section id="partners" class="tab-panel">
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h2 class="text-xl font-bold">American Express - Central Hub</h2>
+            <p class="text-slate-500 text-sm">130M+ cards worldwide</p>
+          </div>
+          <div class="flex gap-4">
+            <div class="text-center bg-blue-50 p-3 rounded">
+              <div class="text-sm text-slate-500">Total Revenue</div>
+              <div class="font-bold text-blue-700">$42.4B</div>
+            </div>
+            <div class="text-center bg-green-50 p-3 rounded">
+              <div class="text-sm text-slate-500">Travel Growth</div>
+              <div class="font-bold text-green-700">24.3%</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-semibold mb-3">Airline Partners</h3>
+        <div id="airlines" class="space-y-3">
+          <div class="p-3 bg-slate-50 rounded flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-600 text-white rounded flex items-center justify-center">D</div>
+              <div>
+                <div class="font-semibold">Delta Air Lines</div>
+                <div class="text-sm text-slate-500">Primary partner</div>
+              </div>
+            </div>
+            <div class="text-sm text-slate-500">Code: DAL</div>
+          </div>
+
+          <div class="p-3 bg-slate-50 rounded flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-800 text-white rounded flex items-center justify-center">A</div>
+              <div>
+                <div class="font-semibold">American Airlines</div>
+                <div class="text-sm text-slate-500">Partner</div>
+              </div>
+            </div>
+            <div class="text-sm text-slate-500">Code: AAL</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer" class="mt-6 text-sm text-slate-500">
+      <div class="bg-white p-4 rounded shadow text-center">
+        © 2024 AMEX Partnership Analysis — For educational purposes only.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Simple tab behavior
+    document.querySelectorAll('#tabs .tab').forEach((btn, idx)=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('#tabs .tab').forEach(b=>b.classList.remove('tab-active'));
+        btn.classList.add('tab-active');
+        // basic: scroll to section for now
+        if(idx===0) window.location.hash='#partners';
+      });
+    });
+  </script>
+</body>
+</html>
